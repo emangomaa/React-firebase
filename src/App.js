@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import "react-notifications/lib/notifications.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
+import { Route, Routes } from "react-router";
+import SignUp from "./components/auth/SignUp";
+import SignIn from "./components/auth/SignIn";
+import HomePage from "./components/HomePage";
+import Profile from "./components/Profile";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<SignUp />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </div>
   );
 }
