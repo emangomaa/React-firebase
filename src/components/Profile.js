@@ -15,6 +15,7 @@ export default function Profile({ auth }) {
       const fileName = Date.now().toString() + nanoid(5);
       const imgRef = ref(storage, `images/${fileName}`);
       await uploadBytes(imgRef, img).then((value) => {
+        // setImg("");
         NotificationManager.success(
           "Image Uploaded Successfully",
           "Upload Image",
